@@ -98,14 +98,14 @@ public class Bank {
                     System.out.println("The Interest Rate of Bank: " + bank.getInterast()+" %");
                     break;
                      case 2:
-                   System.out.format("Enter the Principal amount: $ ");
+                   System.out.format("Enter the Principal amount:$ ");
                      double p = scan.nextDouble();
 
                    //  System.out.println("Enter the Rate of Interest: " +"%");
                     double r = bank.getInterast();
 
-                    System.out.println("Enter the Number of Years: ");
-                    double t = scan.nextDouble();
+                    System.out.format("Enter the Number of Years: ");
+                    int t = scan.nextInt();
 
                     double result = p * Math.pow((1 + r / 100), t) - p;
                    System.out.printf("You are Interest : %.2f\n", result); 

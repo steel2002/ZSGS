@@ -300,7 +300,39 @@ public static void main(String [] args){
 
 }
 
-// 2. Write a program to do the following patterns using for loop?
+// //2. Write a program to do the following patterns using for loop
+/*
+1   1
+ 1 1
+  1
+ 1 1
+1   1*/
+
+class xpattan
+{
+	public static void main(String[]args)
+	{
+		Scanner scan = new Scanner(System.in);
+		System.out.println("Enter the number of rows: ");
+		int row = scan.nextInt();
+		for(int i = 0;i<row;i++)
+		{
+	
+			for(int j = 0;j<row;j++)
+			{
+				if( (i==j) || (i+j==row-1))
+				{
+					System.out.print(1+" ");
+				}
+				else
+      				{
+					System.out.print("  ");
+				}
+			}
+			System.out.println("");
+		}
+	}
+}
 
 
 // 3. Write a program to do the following patterns using while loop?
@@ -1072,6 +1104,16 @@ class Employee12
 	}
 }
 
+
+// 1. int length() – Returns the number of characters.
+
+class Length {
+	public static void main(String[] args) {
+		String st = "Hello zsgs";
+
+		System.out.format("The length of String :" +st.length());
+	}
+}
 
 
 
