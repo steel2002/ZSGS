@@ -242,7 +242,7 @@ public void withdraw(double amount) {
         if (amount > 0) {
             if (account_balance >= amount) {
                 account_balance -= amount;
-                System.out.println("Withdrawn ₹" + amount + " New Balance: ₹" + account_balance);
+                System.out.println("Withdrawn ₹" + amount + ". New Balance: ₹" + account_balance);
             } else {
                 System.out.println("Insufficient balance. Withdrawal failed.");
             }
@@ -275,7 +275,6 @@ class DAY62 {
 
         
         bank.deposit(50000);
-
         bank.withdraw(10000);
 
         bank.displayTranSactionSummary();
