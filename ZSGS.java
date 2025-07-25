@@ -1,5 +1,6 @@
 import java.util.Scanner;
 import java.util.*;
+// import com.arithmetic.Arithmetic;
 
 
 public class ZSGS {
@@ -920,12 +921,28 @@ class Stringadd {
 		Scanner scan = new Scanner(System.in);
 		System.out.println("Enter 1 String value : ");
 		String num1 = scan.nextLine();
+		int i = num1.length()-1;
 		System.out.println("Enter the 2 String value :");
 		String num2 = scan.nextLine();
+		int j = num2.length()-1;
 
-		String result = String.valueOf(Integer.parseInt(num1)  + Integer.parseInt(num2));
+	String result ="";
+	int rem =0;
+	while (i >=0 || j >=0) {
 
-		System.out.println(".(========The Value is ========) " + result);
+		int digit1=i>=0 ? num1.charAt(i) -'0' :0;
+		int digit2=j>=0 ? num2.charAt(j) -'0' :0;
+		int sum = digit1 + digit2 + rem;
+
+		rem=sum/10;
+
+		result =sum %10 + result;
+		i--;
+		j--;
+		
+	}
+	System.out.println("Enter the Result value :"+result);
+
 		
 	}
 }
@@ -1083,6 +1100,15 @@ class Employee1
 	}
 }
 
+/*
+6. Write a program that would print the information (name, year of joining, salary, address) of three employees by creating a class named 'Employee'. The output should be as follows:
+Name Year of joining Address
+Robert 1994 64C- WallsStreat
+Sam 2000 68D- WallsStreat
+John 1999 26B- WallsStreat
+Can use format method to format the above said output.
+*/
+
 class Employee12
 {
 	String name;
@@ -1104,15 +1130,123 @@ class Employee12
 	}
 }
 
+// *Day-6 Assignment Questions:*
+
+// 1. Illustrate the concept-Encapsulation with the Payment Gateway System.[The class should encapsulate private data members such as
+//  transaction ID, payer name, payee name, amount, payment method, and transaction status. Provide appropriate public getter and setter 
+// methods to access and modify these details securely. Also include a method to display the transaction summary.]
+
+class PaymentGetway {
+    private String transactionId;
+	private String payerName;
+	private String payeeName;
+	private double amount;
+	private String paymentMethod;
+	private String transactionStatus;
+
+               // constructor 
+	public PaymentGetway(String transactionId,String payerName,String payeeName,double amount,String paymentMethod, String transactionStatus){
+
+		this.transactionId=transactionId;
+		this.payerName=payerName;
+		this.payeeName=payeeName;
+		this.amount=amount;
+		this.paymentMethod=paymentMethod;
+		this.transactionStatus=transactionStatus;
+
+	}
+
+	public String getTransactionId(){
+		return transactionId;
+	}
+	public String getPayerName(){
+		return payerName;
+	}
+	public String getPayeeName(){
+		return payeeName;
+	}
+	public double getAmount(){
+		return amount;
+	}
+	public String getPaymentMethod(){
+		return paymentMethod;
+	}
+	public String getTransactionStatus(){
+		return transactionStatus;
+	}
+
+	public void setAmount(double amount){
+		if(amount > 0){
+			this.amount=amount;
+		}
+	} 
+
+	public void setPaymentMethod(String paymentMethod){
+		this.paymentMethod=paymentMethod;
+	}
+	public void setTransactionStatus(String transactionStatus){
+		this.transactionStatus=transactionStatus;
+	}
+
+	public void displayTranSactionSummary(){
+           	
+		System.out.println("<=====TransactionSummary=====>");
+		System.out.println("Tranction Id :" +transactionId);
+		System.out.println("Payer Name :" +payerName);
+		System.out.println("PayeeName :" +payeeName);
+		System.out.println("Amount :$"+amount);
+		System.out.println("PaymentMethod :" +paymentMethod);
+		System.out.println("TransactionStatus :" +transactionStatus);
+	}
+}
+class Main {
+	public static void main(String[] args) {
+		
+	PaymentGetway transaction= new PaymentGetway("TX78", "Selvin", "Amzon", 5000000, "Credit card :", "successfull");
+	transaction.displayTranSactionSummary();
+	
+	transaction.setTransactionStatus("Refund");
+
+	System.out.println("\n update transaction :");
+
+	transaction.displayTranSactionSummary();
+
+		
+	}
+
+}
 
 // 1. int length() – Returns the number of characters.
 
 class Length {
 	public static void main(String[] args) {
-		String st = "Hello zsgs";
+		String st = "Hellozsgs";
 
-		System.out.format("The length of String :" +st.length());
+		// System.out.format("The length of String :" +st.length());
+            int count =0;
+
+			for(char c : st.toCharArray()){
+
+				count++;
+				
+			}
+			System.out.format("This tha count of letter :" +count);
 	}
+}
+
+
+// 2. char charAt(int index) – Returns the character at the specified index.
+
+class index {
+	public static void main(String... args) {
+
+		String name = "java";
+
+		char result = name.charAt(3);
+		System.out.format("This is index :" +result);
+		
+	}
+
 }
 
 
