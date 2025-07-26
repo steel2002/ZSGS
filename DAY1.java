@@ -1,6 +1,5 @@
 import java.util.Scanner;
 import java.util.*;
-// import com.arithmetic.Arithmetic;
 
 
 public class DAY1 {
@@ -69,13 +68,13 @@ class Demo1 {
 public static void main (String [] args){
 	
 	
-	int time =12;
-	int time1=40;
+	int a=12;
+	int b=40;
 	
-	String result =(time > time1) ? "Time is big" : " Time not big";     // Time is also Big
+	String result =(a< b) ? "B is Big " : "  not big";     // Time is also Big
 	        
 
-System.out.println("ternary operator " +result);
+System.out.println(" " +result);
 	
 }
 
@@ -112,6 +111,12 @@ sz[iscomper]=true;
 
 
 class Demo3 {
+
+	 {
+        // This code is executed before every constructor
+		
+        System.out.println("This is initializer!");
+    }
 	
 	static
 	{
@@ -125,10 +130,11 @@ class Demo3 {
         System.out.println("This is initializer!");
     }
 public static  void main (String []args){
+	System.out.println("Main :");
 	
 	Demo3 obj =new Demo3();
 	
-	Demo3 obj1 =new Demo3();
+	
 	
 }	
 	
@@ -152,7 +158,7 @@ class Demo4{
 		
 		// Narrowing Casting
 		
-		System.out.println("===================================");
+		System.out.println("<------------------>");
 		
 		
 		double dou = 9.0;
@@ -161,6 +167,19 @@ class Demo4{
 		
 			System.out.println("casting value " +dou);
 				System.out.println(" Narrowing casting value " +nar);
+
+				int t =97;
+
+				double d1 = (double) t;
+
+				System.out.println(" " +d1);
+
+				float f =(float) t;
+
+				System.out.println(" " +f);
+
+				char c = (char) t;
+				System.out.println("" +c);
 		
 }
 	
@@ -180,20 +199,28 @@ class Demo5{
 		boolean value = false;
 		
 		
-		long temp =2l;
+		int result = 1;
+		int count =0;
 		
-		while(temp<=number){
+		while(result<=number){
+
+			result =result *2;
+			count++;
 			
-			if(temp==number){
+			
+			if(result==number){
+					
 				
 			value=true;
+			System.out.println(" " +count);
 			
 			}
-				temp *=2;
+				
 		}
+	
 			if(value){
 				
-				System.out.println("This Number of Power :");
+				System.out.println("This Number  Power :");
 				
 			} else {
 				
@@ -207,20 +234,25 @@ class Demo5{
 
 // 8. Write a program to find the first set bit of a number?
 
-class Demo6  {
-	public static void main(String [] args){
-		
-		Scanner scan = new Scanner(System.in);
-		System.out.println("Enter the number :");
-		
-		int a=scan.nextInt();
-		
-		int b=a&-a;
-		
-		System.out.println("First bit number  :" +b);
-	}
-
-
+class FirstSet {
+    public static void main(String[] args) {
+        System.out.print("Program to find first set of bit of a number");
+        Scanner scan = new Scanner(System.in);
+        System.out.print("Enter a number: ");
+		int count = 1;
+        int num = scan.nextInt();
+        if (num == 0) {
+            System.out.println("No set bit is there");
+        } else {
+            int firstSetBit = num & -num;
+            while(firstSetBit>1){
+				firstSetBit = firstSetBit / 2;
+                count++;
+			}
+			System.out.println("First set bit position: " + count);
+        }
+        
+    }
 }
 
 
@@ -264,6 +296,7 @@ class Demo7{
 	
 	public static void main(String [] args){
 		
+	
 		Demo7 obj = new Demo7();
 		
 		System.out.println(obj instanceof Demo7);
