@@ -61,34 +61,186 @@ class xpattan
 	}
 }
 
+// 2 Write a program to do the following patterns using while loop?
 
-// 3. Write a program to do the following patterns using while loop?
 
-class DimentPattern {
-    public static void main(String[] args) {
-	Scanner scanner = new Scanner(System.in);
-      System.out.print("Enter the number of rows: ");
-      int n = scanner.nextInt();
-      for (int i = 0; i < n; i++) 
-      {
-          for (int j = 0; j < n; j++)
-          {
-             if(j<(n-i-1))
-             {
-              System.out.print("  ");
-             }
-             else
-             {
-              System.out.print(i-1 + " ");
-             }    
-          }
-          System.out.println("");     
-      }     
-		
-		
-    }
+/* R R R R
+   R     R
+   R R R R
+   R   R
+   R     R   */
+
+
+class Pat2
+{
+	public static void main(String[]args)
+	{
+		Scanner scan = new Scanner(System.in);
+		System.out.println("Enter the number of rows: ");
+		int row = scan.nextInt();
+		for(int i = 0;i<row;i++)
+		{
+			for(int j = 0;j<row;j++)
+			{
+		 		if(i==0 || i ==2)
+				{
+                    			if(j!=row-1)
+					{
+                        			System.out.print("R ");
+                    			}
+                    			else
+					{
+                        			System.out.print("  ");
+                   	 		}
+                		}
+                		if(i==1 || i==row-1)
+				{
+                    			if(j==0 || j==row-2)
+					{
+                        			System.out.print("R ");
+                    			}
+                    			else
+					{
+                        			System.out.print("  ");
+                    			}
+                		}
+                		if(i==3)
+				{
+                    			if(j== 0 || j==row-3)
+					{
+                        			System.out.print("R ");
+                    			}
+                    			else
+					{
+                        			System.out.print("  ");
+                    			}
+                		}
+            		}
+
+			System.out.println("");
+		}
+
+	}
 }
 
+//3. Write a program to do the following patterns using while loop
+/* 1
+  2 3
+ 4 5 6
+  7 8
+   9*/ 
+
+   class Pattern3 {
+	public static void main(String...args){
+		Scanner scan = new Scanner(System.in);
+		System.out.println("Enter the n value :");
+		int n =scan.nextInt();
+
+		int l=0;
+		int i=-n+1;
+		int count=1;
+
+		while (i<n) {
+
+			if(i<=0){
+				l=-i;
+			} else {
+				l=i;
+			}
+
+			int j=0;
+
+			while (j<n) {
+
+				if(j<l){
+					System.out.print( " ");
+				} else {
+					System.out.print(count++ +" ");
+				}
+				j++;
+				
+			}
+			i++;
+			System.out.println();
+
+			
+		}
+
+	}
+   }
+
+
+    /* w
+       w w
+       w w w
+       w w
+       w
+   */
+
+   class Pattern {
+	public static void main(String... args) {
+
+		Scanner scan = new Scanner(System.in);
+		System.out.println("Entet the n value :");
+		int n = scan.nextInt();
+
+	int l =0;
+	int i=-n+1;
+
+	while(i<n){
+		if(i<=0){
+			l=-i;
+		} else {
+			l=i;
+		}
+		int j=0;
+
+		while (j<n) {
+			if(j<(n-l)){
+				System.out.print("w");
+			} else {
+				System.out.print("");
+			}
+			j++;
+			
+		}
+		i++;
+		System.out.println(" ");
+	}
+		
+	}
+   }
+
+   // 4. Write a program to do the following patterns using do...while loop?
+// a) Pascal Triangle
+
+// b)   ZOHO
+//      CORP
+//      ORAT
+//      IONS
+
+class Pattern4 {
+	public static void main(String... args) {
+      
+		char arr [] = {'Z','O','H','O','C','O','R','P','O','R','A','T','I','O','N','S'};
+
+		int i=0,n=4,p=0;
+
+		do {
+			int j=0;
+            do {
+				System.out.print( " " +arr[p]);
+				j++;
+				p++;
+				
+			} while (j<n);
+			i++;
+			System.out.println();
+			
+		} while (i<n);
+		
+	}
+}
 
 // 5. Define a method to find the sum of even numbers from the series 1, 2, 3, 4, 5, ...n using continue statement.
 
@@ -105,10 +257,12 @@ class EvenNumber {
 		for(int i=0;i<n;i++){
 			
 			if(i%2==0){
+				System.out.println("Even Number :" +i);
 				continue;
 	}
 			sum +=i;
 		}
+		
 		System.out.println("Sum of value " +sum);
 	}
 }
