@@ -174,7 +174,7 @@ class FullTimeEmployee extends Employee {
     double monthlySalary;
 
     public FullTimeEmployee(String name, int id, double monthlySalary) {
-        this.name.name;
+        this.name=name;
         this.monthlySalary = monthlySalary;
     }
 }
