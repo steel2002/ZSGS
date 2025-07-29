@@ -340,9 +340,40 @@ class Polygon extends Shape {
         System.out.println("Polygon is a shape");
     }
 }
-    
 
+class Rectangle extends Shape {
+    public void display(){
+        System.out.println("Rectangle is a Polygon");
+    }
+}
+class Triangle extends Shape {
+    public void display(){
+        System.out.println("Triangle is a Polygon");
+    }
+}
+class Square extends Shape {
+    public void display(){
+        System.out.println("Square is a Triangle");
+    }
+}
 
+class ShapeDemo {
+    public static void main(String[] args) {
 
+        Shape s = new Shape();
+        s.display();
 
+        Polygon p = new Polygon();
+        p.display();
+
+        Rectangle r = new Rectangle();
+        r.display();
+
+        Triangle t = new Triangle();
+        t.display();
+
+        Square sq = new Square();
+        sq.display();
+    }
+}
 

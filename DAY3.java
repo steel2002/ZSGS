@@ -1,22 +1,28 @@
 // *Day-3 Assignment Questions:*
-
-// 1. Create a class named 'Student' with a string variable 'name' and an integer variable 'roll_no'. 
-// Assign the value of roll_no as '2' and that of name as "John" by creating an object of the class Student.
-
-class DAY3 {
-
-	String name ;
-	int roll_Number ;
-	public static void main(String... args) {
-
-		DAY3 obj = new DAY3();
-		 obj.name ="Selvin";
-		 obj.roll_Number = 22;
-		 System.out.println("The Name the Student : " +obj.name);
-		  System.out.println("The Name the Student : " +obj.roll_Number);
-     }
-	
+public class DAY3
+{
+	public static void main(String[]args)
+	{
+		System.out.println("DAY3 Assignment Questions");
+	}
 }
+
+/*1. Create a class named 'Student' with a string variable 'name' and an integer variable 'roll_no'. Assign the value of roll_no as '2' and that of name as "John" by creating an object of the class Student.*/
+class Student
+{
+	String name;
+	int roll_no;
+	public static void main(String[]args)
+	{
+		Student st = new Student();
+		st.name = "John";
+		st.roll_no = 2;
+		System.out.println("The name of the student: "+st.name);
+		System.out.println("The roll_no of the student: "+st.roll_no);
+	}
+}
+	
+
 // 2. Create a class named Student that has the following attributes:
 // name (String)
 // roll_no (int)
@@ -99,6 +105,75 @@ class Employee1
 		Employee1 E3 = new Employee1();
 	}
 }
+
+// 4. Design the Vehicle class that stores information about a vehicle such as its vehicle ID, brand name, and price, 
+// such that it can internally keep track of how many vehicles have been created so far, without requiring manual counting from outside the class.
+
+class Vehicle {
+	private String id;
+	private String brandName;
+	private double price;
+	private static int count;
+
+ Vehicle(String id,String brandName,double price){
+		this.id =id;
+		this.brandName=brandName;
+		this.price=price;
+		count++;
+	}
+}
+
+public static void Main(String ...args){
+	Vehicle vehicle=new Vehicle("1001","BMW",2000000.00);
+     System.out.println("The number of vehicles: " + Vehicle.count);
+	}
+
+
+// 	5. Design a simple inventory system in Java using object-oriented principles that demonstrates the use of static variables and object containment.
+// ‌
+// Create two classes:
+// ---Store
+// ---Product
+// ‌
+// Requirements:
+// The Store class should have:
+// a. storeName and storeLocation as static variables since they are common to all products in the store.
+// b. A static method setStoreDetails(String name, String location) to initialize the static variables.
+// c. A static method displayStoreDetails() to print store details.
+// d. A list to maintain multiple Product objects (i.e., the store contains many products).
+// e. A method addProduct(Product product) to add products to the store.
+// f. A method displayAllProducts() to display details of all products.
+// ‌
+// The Product class should have:
+// a. Product ID, name, price, and quantity as instance variables.
+// b. A constructor to initialize these fields.
+// c. A method displayProduct() to show product details.
+// ‌
+// Task:
+// Implement the above classes and demonstrate their use in the main() method by:
+// a. Setting store details once.
+// b. Creating multiple product objects.
+// c. Adding them to the store.
+// d. Displaying store and product information.
+// ‌
+// Also Check how many .class files are generated.
+
+
+class Store {
+	private static String storeName;
+	private static String storeLocation;
+
+
+
+}
+class Product {
+
+
+}
+
+
+
+
 
 /*
 6. Write a program that would print the information (name, year of joining, salary, address) of three employees by creating a class named 'Employee'. The output should be as follows:
