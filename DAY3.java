@@ -1,3 +1,7 @@
+import java.util.*;
+
+
+
 // *Day-3 Assignment Questions:*
 public class DAY3
 {
@@ -121,11 +125,14 @@ class Vehicle {
 		this.price=price;
 		count++;
 	}
+	static int getCount() {
+		return count;
+	}
 }
 
 public static void Main(String ...args){
 	Vehicle vehicle=new Vehicle("1001","BMW",2000000.00);
-     System.out.println("The number of vehicles: " + Vehicle.count);
+     System.out.println("The number of vehicles: " + Vehicle.getCount());
 	}
 
 
@@ -159,16 +166,72 @@ public static void Main(String ...args){
 // Also Check how many .class files are generated.
 
 
+
 class Store {
-	private static String storeName;
-	private static String storeLocation;
+    static String storeName;
+    static String storeLocation;
 
+    List<Product> productList = new ArrayList<>(); 
 
+    static void setStoreDetails(String name, String location) {
+        storeName = name;
+        storeLocation = location;
+    }
 
+    static void displayStoreDetails() {
+        System.out.println("Store Name: " + storeName);
+        System.out.println("Store Location: " + storeLocation);
+    }
+
+    void addProduct(Product product) {
+        productList.add(product);
+    }
+
+    void displayAllProducts() {
+        System.out.println("All Products in Store:");
+        for (Product p : productList) {
+            System.out.println("----------------------");
+            p.displayProduct();
+        }
+    }
 }
+
 class Product {
+    int productId;
+    String productName;
+    double price;
+    int quantity;
 
+    Product(int productId, String productName, double price, int quantity) {
+        this.productId = productId;
+        this.productName = productName;
+        this.price = price;
+        this.quantity = quantity;
+    }
 
+    void displayProduct() {
+        System.out.println("Product ID: " + productId);
+        System.out.println("Product Name: " + productName);
+        System.out.println("Price: ₹" + price);
+        System.out.println("Quantity: " + quantity);
+    }
+}
+
+public class Main {
+	
+    public static void main(String[] args) {
+        Store.setStoreDetails("selvin tech ", "town");
+        Store.displayStoreDetails();
+
+        Product product1 = new Product(101, "Laptop", 75000.00, 10);
+        Product product2 = new Product(102, "Smartphone", 30000.00, 20);
+
+        Store store = new Store();
+        store.addProduct(product1);
+        store.addProduct(product2);
+
+        store.displayAllProducts();
+    }
 }
 
 
