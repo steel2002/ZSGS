@@ -192,46 +192,46 @@ class DAY61 {
 //include a method to deposit and withdraw amount ensuring that the balance cannot go negative.
 
 class BankAccount {
-    private int account_number;
-    private String account_holder_name;
-    private double account_balance;
+    private int accountnumber;
+    private String accountholdername;
+    private double accountbalance;
 
-    public BankAccount(int account_number,String account_holder_name,double account_balance){
-        this.account_number=account_number;
-        this.account_holder_name=account_holder_name;
-        this.account_balance=account_balance;
+    public BankAccount(int accountnumber,String accountholdername,double accountbalance){
+        this.accountnumber=accountnumber;
+        this.accountholdername=accountholdername;
+        this.accountbalance=accountbalance;
     }
 
     public int getAccount_number() {
-        return account_number;
+        return accountnumber;
     }
 
-    public void setAccount_number(int account_number) {
-        this.account_number = account_number;
+    public void setAccount_number(int accountnumber) {
+        this.accountnumber = accountnumber;
     }
 
     public String getAccount_holder_name() {
-        return account_holder_name;
+        return accountholdername;
     }
 
-    public void setAccount_holder_name(String account_holder_name) {
-        this.account_holder_name = account_holder_name;
+    public void setAccount_holder_name(String accountholdername) {
+        this.accountholdername = accountholdername;
     }
 
     public double getAccount_balance() {
-        return account_balance;
+        return accountbalance;
     }
 
-    public void setAccount_balance(double account_balance) {
-        this.account_balance = account_balance;
+    public void setAccount_balance(double accountbalance) {
+        this.accountbalance = accountbalance;
     }
 
        // Deposit 
 
      public void deposit(double amount) {
         if (amount > 0) {
-            account_balance += amount;
-            System.out.println("Deposited ₹" + amount + ". New Balance: ₹" + account_balance);
+            accountbalance += amount;
+            System.out.println("Deposited $" + amount + ". New Balance: $" + accountbalance);
         } else {
             System.out.println("Deposit amount must be positive.");
         }
@@ -240,9 +240,9 @@ class BankAccount {
     // withdrow 
 public void withdraw(double amount) {
         if (amount > 0) {
-            if (account_balance >= amount) {
-                account_balance -= amount;
-                System.out.println("Withdrawn ₹" + amount + ". New Balance: ₹" + account_balance);
+            if (accountbalance >= amount) {
+                accountbalance -= amount;
+                System.out.println("Withdrawn $" + amount + ". New Balance: $" + accountbalance);
             } else {
                 System.out.println("Insufficient balance. Withdrawal failed.");
             }
@@ -255,9 +255,9 @@ public void withdraw(double amount) {
     public void displayTranSactionSummary(){
            	
 		System.out.println("<-----BankAccount----->");
-		System.out.println("Account Number  : " +account_number);
-		System.out.println("Account Holder Name :" +account_holder_name);
-        System.out.println("Account Balance :" +account_balance);
+		System.out.println("Account Number  : " +accountnumber);
+		System.out.println("Account Holder Name :" +accountholdername);
+        System.out.println("Account Balance :" +accountbalance);
 		
 	}
 }

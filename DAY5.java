@@ -1,4 +1,12 @@
 import java.util.Scanner;
+import java.util.*;
+
+
+public class DAY5 {
+    public static void main(String[] args) {
+        
+    }
+}
 
 
 // *Day-5 Assignment Questions:*
@@ -113,7 +121,7 @@ class  OutPatientRecord  extends MedicalRecord{
     }
 }
 
-public class DAY5 {
+class hospitalManagement{
 
     public static void main(String...args) {
 
@@ -149,32 +157,137 @@ public class DAY5 {
 // 3. Create a Java application to manage employees in a company. Define a base class Employee with a method calculateSalary(). 
 //Then create two subclasses FullTimeEmployee and PartTimeEmployee that override calculateSalary() method based on their working type.
 
-class Employe {
-    String name;
+class Employee {
     int id;
+    String name;
 
-
-    public Employe (String name,int id){
-        this.name=name;
-        this.id=id;
-
+    public Employee(int id,String name ) {
+       this.id = id;
+       this.name = name;
     }
 
-    public double calculateSalary(){
-        return 0.0;
+    void calculateSalary() {
+        System.out.println("calculating salary for Employee :");
     }
 
-    public void displayRecord(){
-        System.out.println("This is Employe Name :" +name);
-        System.out.println("This is Employe ID :" +id);
+    void display(){
+        System.out.println("Employee ID: " + id);
+        System.out.println("Employee Name: " + name);
     }
 }
 
-class FullTimeEmployee extends Employee {
-    double monthlySalary;
+class FullTimeEmployee extends Employee{
+double salary;
 
-    public FullTimeEmployee(String name, int id, double monthlySalary) {
-        this.name=name;
-        this.monthlySalary = monthlySalary;
+public FullTimeEmployee(int id,String name ,double salary){
+
+    super(id,name);
+    this.salary= salary;
+}
+
+void calculateSalary() {
+    System.out.println("Full Time Employee salary :" + salary);
+}
+
+}
+
+class PartTimeEmployee extends Employee {
+    double salary;
+
+    public PartTimeEmployee(int id,String name, double salary){
+        super(id, name);
+        this.salary = salary;
+    }
+    void calculateSalary(){
+        System.out.println("Part Time Employee salary:" +salary);
+    }
+}
+
+class EmployeeManagement{
+    public static void main(String[] args) {
+
+      FullTimeEmployee full = new FullTimeEmployee(007, "selvin", 10000000);
+      PartTimeEmployee part = new PartTimeEmployee(006, "hyfa", 10000000);
+
+      full.calculateSalary();
+      full.display();
+
+        System.out.println("------------------");
+
+        part.calculateSalary();
+        part.display();
+        
+    }
+}
+
+// 4. Design a Java Ticket Booking System using polymorphism where Bus, Train, and Flight tickets share a common method but 
+// implement booking differently.
+
+class TicketBooking {
+
+    void booking(){
+        System.out.println("Booking Ticket :");
+    }
+
+}
+
+class Bus extends TicketBooking {
+
+    void booking(){
+        System.out.println(" Welcome to You Bus Ticket Booking Now :");
+    }
+}
+
+class Train extends TicketBooking {
+
+    void booking(){
+        System.out.println("Welcome to You Train Ticket Booking Now :");
+    }
+}
+
+class Flight extends TicketBooking {
+
+    void booking(){
+        System.out.println("Welcome to You flight Ticket Booking Now :");
+    }
+}
+
+class TicketBookingSystem {
+    public static void main(String[] args) {
+        Scanner scan = new Scanner(System.in);
+
+        System.out.println("Select the Ticket Booking Type Enter \n "+"1.Bus\n"+"2.Train\n"+"3.Flight\n "+"4.Exit :");
+
+
+        switch (scan.nextInt()) {
+            case 1:
+                TicketBooking bus = new Bus();
+
+                bus.booking();
+                
+                break;
+
+                case 2:
+
+                TicketBooking train = new Train();
+                train.booking();
+                break;
+
+                case 3:
+                 TicketBooking flight = new Flight();
+
+                 flight.booking();
+                 break;
+
+                 case 4 :
+                 System.out.println("Exiting the Ticket Booking System. "+ "404 Not Found");
+
+               System.exit( 0);
+               break;
+        
+            default:
+            System.out.println("Invalid choice, please try again.");
+                break;
+        }
     }
 }
