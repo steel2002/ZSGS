@@ -1,0 +1,53 @@
+*Day-3 Assignment Questions:*
+1. Create a class named 'Student' with a string variable 'name' and an integer variable 'roll_no'. Assign the value of roll_no as '2' and that of name as "John" by creating an object of the class Student.
+2. Create a class named Student that has the following attributes:
+name (String)
+roll_no (int)
+phone_no (int)
+address (String)
+Create a constructor Student(String name, int roll_no, int phone_no, String address) and store and display the details for two students having names "Sam" and "John" respectively.
+3. Write a Java program where you define a class named Employee. Inside the class, define fields to hold an employee’s name, employee ID, designation, and salary.
+a. First, create a no-argument constructor that prints a message saying the object has been created, and sets default values for all the fields.
+b. Write a parametrized constructor that allows you to set values for all the fields when an object is created.
+c. Add another constructor — a copy constructor — that takes an existing employee object and creates a new one with the same values.
+In the main method, create:
+a. One object using the no-argument constructor,
+b. One object using the parametrized constructor,
+c. And a third object using the copy constructor.
+Finally, display the details of all three employees.
+4. Design the Vehicle class that stores information about a vehicle such as its vehicle ID, brand name, and price, such that it can internally keep track of how many vehicles have been created so far, without requiring manual counting from outside the class.
+5. Design a simple inventory system in Java using object-oriented principles that demonstrates the use of static variables and object containment.
+‌
+Create two classes:
+---Store
+---Product
+‌
+Requirements:
+The Store class should have:
+a. storeName and storeLocation as static variables since they are common to all products in the store.
+b. A static method setStoreDetails(String name, String location) to initialize the static variables.
+c. A static method displayStoreDetails() to print store details.
+d. A list to maintain multiple Product objects (i.e., the store contains many products).
+e. A method addProduct(Product product) to add products to the store.
+f. A method displayAllProducts() to display details of all products.
+‌
+The Product class should have:
+a. Product ID, name, price, and quantity as instance variables.
+b. A constructor to initialize these fields.
+c. A method displayProduct() to show product details.
+‌
+Task:
+Implement the above classes and demonstrate their use in the main() method by:
+a. Setting store details once.
+b. Creating multiple product objects.
+c. Adding them to the store.
+d. Displaying store and product information.
+‌
+Also Check how many .class files are generated.
+‌
+6. Write a program that would print the information (name, year of joining, salary, address) of three employees by creating a class named 'Employee'. The output should be as follows:
+Name Year of joining Address
+Robert 1994 64C- WallsStreat
+Sam 2000 68D- WallsStreat
+John 1999 26B- WallsStreat
+Can use format method to format the above said output.

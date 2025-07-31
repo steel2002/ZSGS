@@ -190,7 +190,7 @@ class TwoD {
         System.out.println("TwoD default constructor");
     }
 
-    public TwoD(int x, int y) {
+    public  TwoD(int x, int y) {
       
         System.out.println("TwoD constructor with two arguments");
         setValue(x,y);
@@ -228,18 +228,32 @@ class ThreeD extends TwoD {
         return z;
     }
 
-    public void distance(ThreeD other) {
+    public void distance(ThreeD three) {
         
-      
-        // int  a = this .getX() - three.getX();
+      int a=this.getX()-three.getX();
+      int b=this.getY()-three.getY();
+      int c=this.getZ()-three.getZ();
 
-    
+      System.out.println(" " +Math.sqrt(a*a+b*b+c*c));
 
     }
-
-
 }
 
+class Main {
+    public static void main(String... args) {
+
+        ThreeD three = new ThreeD(20,30,40);
+
+         three.distance(three);
+
+        three.setValue(10,20);
+
+        three.setZ(30);
+
+      
+        
+    }
+}
 
 // 3. A class Point is declared as follows:
 // class Point{

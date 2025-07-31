@@ -222,7 +222,7 @@ class Product {
     }
 }
 
-public class Main1 {
+class Main {
 	
     public static void main(String[] args) {
         Store.setStoreDetails("selvin tech ", "town");
