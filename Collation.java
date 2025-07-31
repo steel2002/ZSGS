@@ -48,7 +48,8 @@ class PriorityQueueDemo {
         pq.offer("Banana");
         pq.add("Cherry");
          pq.add("Elderberry");
-        pq.add("Date");
+          pq.add("Elderberry");
+     pq.add("Date");
         pq.add("Fig");
         pq.add("Grape");
 

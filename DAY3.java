@@ -113,11 +113,11 @@ class Employee1
 // 4. Design the Vehicle class that stores information about a vehicle such as its vehicle ID, brand name, and price, 
 // such that it can internally keep track of how many vehicles have been created so far, without requiring manual counting from outside the class.
 
-class Vehicle {
-	private String id;
-	private String brandName;
-	private double price;
-	private static int count;
+class  Vehicle {
+	String id;
+	 String brandName;
+	 double price;
+	 static int count;
 
  Vehicle(String id,String brandName,double price){
 		this.id =id;
@@ -125,15 +125,20 @@ class Vehicle {
 		this.price=price;
 		count++;
 	}
-	static int getCount() {
-		return count;
-	}
+	
 }
 
-public static void Main(String ...args){
-	Vehicle vehicle=new Vehicle("1001","BMW",2000000.00);
-     System.out.println("The number of vehicles: " + Vehicle.getCount());
+
+class VehicleMain {
+    public static void main(String[]args){
+	Vehicle v =new Vehicle("1001","BMW",2000000.00);
+    Vehicle v1 =new Vehicle("103","MG",2000000.00);
+   
+	 System.out.println("The number of vehicles: " +Vehicle.count);
 	}
+
+
+}
 
 
 // 	5. Design a simple inventory system in Java using object-oriented principles that demonstrates the use of static variables and object containment.
@@ -217,7 +222,7 @@ class Product {
     }
 }
 
-public class Main {
+public class Main1 {
 	
     public static void main(String[] args) {
         Store.setStoreDetails("selvin tech ", "town");
