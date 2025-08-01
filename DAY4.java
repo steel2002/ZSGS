@@ -414,24 +414,34 @@ class ShapeDemo {
 
 class MyString {
     private char arr[];
+    private String mySt="";
     
-    public MyString(String s){
+    public MyString(String s, String mySt){
 
         this.arr=s.toCharArray();
+        this.mySt=mySt;
        
 
     }
+
+
+    // 1. int length() – Returns the number of characters.
+    
 
     public int length(){
        return arr.length;
        
     }
+
+    // 2. char charAt(int index) – Returns the character at the specified index.
     
-    public int charAt(int n){
+    public char charAt(int n){
         
         return arr[n];
 
     }
+
+    // 3. boolean equals(MyString other) – Checks if two MyString objects are equal.
 
     public boolean equals(String s){
 
@@ -451,6 +461,8 @@ class MyString {
         }
         return true;
     }
+
+    // 4. MyString toUpperCase() – Returns a new string with all characters in uppercase.
 
     public String toUpperCase(){
 
@@ -473,14 +485,117 @@ class MyString {
 
     }
 
+    // 5. MyString toLowerCase() – Returns a new string with all characters in lowercase.
+
+
+    public String toLowerCase(){
+
+       String c ="";
+
+        for(int i=0;i<arr.length;i++){
+            
+            char ch =arr[i];
+
+
+            if(ch >= 'A'&& ch <='Z'){
+
+                 c +=(char) (ch+32);
+                 continue;
+            }
+            c+=ch;
+        }
+
+        return c;
+
+    }
+
+    // 6. MyString substring(int start, int end) – Returns a substring from start to end-1
+
+    public String substring(int start, int end){
+
+
+        String s ="";
+
+        for(int i=start ;i<end ;i++){
+            
+            s+=arr[i];
+        }
+
+        return s;
+    }
+
+
+    // 7. MyString concat(MyString other) – Concatenates another string to the current one.
+
+    public String concat(String other){
+
+
+        return mySt + other;
+    }
+
+
+    // 8. boolean contains(MyString sub) – Checks if a substring exists.
+
+
+    public boolean check (String a){
+               
+         char[] newarr =a.toCharArray();
+
+      
+
+        if(arr.length < newarr.length){
+
+             return false;
+
+        }
+
+        int i=0;
+        int j=0;
+        boolean b=false;
+
+        while (i<arr.length && j<newarr.length) {
+
+            if(arr[i]==newarr[j]){
+                b=true;
+                j++;
+            }      
+            
+            else if(b){
+                
+                return false;
+
+
+            }
+            i-=j;
+            j=0;
+            i++;
+            
+            
+            
+          
+            
+        }
+        return j==newarr.length;
+        
+    }
+
     
 }
 
 class Main1 {
     public static void main (String...args){
-        String st ="selvin";
-        MyString m = new MyString(st);
-         System.out.println("Length :" + m.toUpperCase());
+          String st ="Gandhi MaMahaan ";
+        MyString m = new MyString(st, st);
+
+        // System.out.println("----------CharAt->>>>>>>>>>" +m.charAt(2));
+        //  System.out.println("---------toUpperCase->>>>>>>>>>" + m.toUpperCase());
+        //  System.out.println("---------toLowerCase->>>>>>>>>>" + m.toLowerCase());
+
+        //  System.out.println("----------SubString->>>>>>>>>>" + m.substring(0,2));
+
+        //  System.out.println("----------concatTwoString->>>>>>>>>>" + m.concat("selvin"));
+
+         System.out.println("----------concatTwoString->>>>>>>>>>" +m.check("Mahaan"));
 
     }
 }
