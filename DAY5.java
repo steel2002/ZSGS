@@ -128,6 +128,7 @@ class hospitalManagement{
         Scanner scan = new Scanner(System.in);
 
          System.out.println(" InPatient Record Entry");
+         System.out.println("---------------------");
         InPatientRecord inpatient = new InPatientRecord();
         inpatient.InPatientRecord (scan);
         System.out.println(" InPatient Record Display");

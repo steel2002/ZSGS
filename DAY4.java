@@ -302,6 +302,8 @@ class Point{
     }
 
     
+
+    
 }
 
 // 4. Write a program to illustrate that Classes cannot be used for multiple Inheritance.
@@ -388,6 +390,236 @@ class ShapeDemo {
 
         Square sq = new Square();
         sq.display();
+    }
+}
+
+
+
+
+/* 
+6. Design and implement a custom Java class named MyString that mimics the behavior of Java’s built-in String class. Your class should store character data internally (e.g., using a char[] or String as input) and should provide the following string methods,
+1. int length() – Returns the number of characters.
+2. char charAt(int index) – Returns the character at the specified index.
+3. boolean equals(MyString other) – Checks if two MyString objects are equal.
+4. MyString toUpperCase() – Returns a new string with all characters in uppercase.
+5. MyString toLowerCase() – Returns a new string with all characters in lowercase.
+6. MyString substring(int start, int end) – Returns a substring from start to end-1.
+7. MyString concat(MyString other) – Concatenates another string to the current one.
+8. boolean contains(MyString sub) – Checks if a substring exists.
+9. int indexOf(char ch) – Returns the index of the first occurrence of the character.
+10. MyString replace(char oldChar, char newChar) – Replaces all occurrences of a character.
+* Implement proper constructors, including one that takes a char[] or String as input.
+* Avoid using any built-in String methods to perform the operations internally.
+* Write a main method to demonstrate the working of your MyString class.                                                                                                                                                                     */
+
+class MyString {
+    private char arr[];
+    
+    public MyString(String s){
+
+        this.arr=s.toCharArray();
+       
+
+    }
+
+    public int length(){
+       return arr.length;
+       
+    }
+    
+    public int charAt(int n){
+        
+        return arr[n];
+
+    }
+
+    public boolean equals(String s){
+
+      char[] newarr =s.toCharArray();
+
+     
+
+        if(newarr.length !=arr.length){
+            return false;
+        }
+
+        for(int i=0;i<newarr.length;i++){
+
+            if(newarr[i] !=arr[i]){
+                return false;
+            }
+        }
+        return true;
+    }
+
+    public String toUpperCase(){
+
+       String c ="";
+
+        for(int i=0;i<arr.length;i++){
+            
+            char ch =arr[i];
+
+
+            if(ch >= 'a'&& ch <='z'){
+
+                 c +=(char) (ch-32);
+                 continue;
+            }
+            c+=ch;
+        }
+
+        return c;
+
+    }
+
+    
+}
+
+class Main1 {
+    public static void main (String...args){
+        String st ="selvin";
+        MyString m = new MyString(st);
+         System.out.println("Length :" + m.toUpperCase());
+
+    }
+}
+
+/* 
+7. Design a calculator application using Java Inheritance.
+‌
+Create the following class hierarchy:
+‌
+--->BasicCalculator (Base class):
+Implement at least three basic arithmetic methods, such as:
+‌
+--->add(int a, int b)
+--->subtract(int a, int b)
+--->multiply(int a, int b)
+--->divide(int a, int b)
+‌
+--->AdvancedCalculator (Inherits from BasicCalculator):
+Add 3 to 4 advanced mathematical operations, such as:
+‌
+--->power(int base, int exponent)
+--->modulus(int a, int b)
+--->squareRoot(double number)
+‌
+--->ScientificCalculator (Inherits from AdvancedCalculator):
+Add scientific functions, such as:
+‌
+--->sin(double angle)
+--->cos(double angle)
+--->log(double value)
+--->exp(double value)
+* Demonstrate the use of inheritance by creating an object of ScientificCalculator and calling methods from all three levels of the class hierarchy.
+* Use appropriate access specifiers and method overrides where required.
+* Add a main() method to test all operations.
+
+*/
+
+class BasicCalculator{
+
+    public int add(int a, int b){
+        return a+b;
+    }
+
+    public int subtract(int a, int b){
+        return a-b;
+    }
+
+    public int multiply(int a, int b){
+        return a*b;
+    }
+
+    public int divide(int a, int b) {
+
+        return a/b;
+    }
+}
+
+class AdvancedCalculator  extends BasicCalculator {
+
+    public int power(int a, int b){
+
+        return (int) Math.pow(a, b);
+
+    }
+
+    public int  modulus(int a, int b){
+
+        return a %b;
+    }
+
+    public double squareRoot(double a){
+         
+        return  (int) Math.sqrt(a);
+    }
+
+
+}
+
+class ScientificCalculator extends BasicCalculator {
+
+    public double sin(double a){
+        return (int) Math.sin(a);
+    }
+
+    public double cos(double a){
+
+        return (int) Math.cos(a);
+    }
+
+    public double log(double a){
+
+        return (int) Math.log(a);
+    }
+
+    public double exp(double a){
+
+        return (int) Math.exp(a);
+    }
+
+
+
+
+}
+
+
+
+class BasicCalculatorSystem {
+    public static void main(String... args) {
+
+        BasicCalculator b = new BasicCalculator();
+       
+
+        System.out.println("---------- BasicCalculator--------");
+       
+       System.out.println("" +  b.add(10, 20));
+     System.out.println(" " +  b.divide(9, 6));
+      System.out.println("" +  b.subtract(66, 9));
+      System.out.println("" + b.multiply(77, 99));
+
+
+       System.out.println("--------AdvancedCalculator-----------");
+
+       AdvancedCalculator a = new AdvancedCalculator();
+
+     System.out.println("" +  a.power(10, 30));
+      System.out.println(" "+ a.modulus(10, 30));
+      System.out.println("" + a.squareRoot(25));
+
+
+       System.out.println("---------ScientificCalculator------------");
+       ScientificCalculator s = new ScientificCalculator();
+
+      System.out.println("" + s.cos(5.0));
+      System.out.println(""+ s.log(6.0));
+     System.out.println(""+  s.log(7.9));
+    System.out.println(""+   s.exp(8.8));
+    
+      
+        
     }
 }
 
