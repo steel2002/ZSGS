@@ -551,33 +551,52 @@ class MyString {
 
         int i=0;
         int j=0;
-        boolean b=false;
+       
 
         while (i<arr.length && j<newarr.length) {
 
             if(arr[i]==newarr[j]){
-                b=true;
+                i++;
                 j++;
+                continue;
             }      
-            
-            else if(b){
-                
-                return false;
-
-
-            }
             i-=j;
             j=0;
             i++;
-            
-            
-            
-          
-            
-        }
+    }
         return j==newarr.length;
         
     }
+
+
+    // 9. int indexOf(char ch) – Returns the index of the first occurrence of the character.
+
+    public int indexOf(char s) {
+   for(int i=0;i<arr.length;i++){
+
+            if(arr[i]==s){
+                return i;
+            }
+        }
+        return -1;
+    }
+
+
+    //  10. MyString replace(char oldChar, char newChar) – Replaces all occurrences of a character.
+
+
+    public String replace(char oldChar,char newChar){
+
+        String s ="";
+
+        for(int i=0;i<arr.length;i++){
+
+               s +=(arr[i]==oldChar) ? newChar:arr[i];
+        }
+        return s;
+    }
+
+
 
     
 }
@@ -587,15 +606,23 @@ class Main1 {
           String st ="Gandhi MaMahaan ";
         MyString m = new MyString(st, st);
 
-        // System.out.println("----------CharAt->>>>>>>>>>" +m.charAt(2));
-        //  System.out.println("---------toUpperCase->>>>>>>>>>" + m.toUpperCase());
-        //  System.out.println("---------toLowerCase->>>>>>>>>>" + m.toLowerCase());
+     System.out.println("----------CharAt->>>>>>>>>>" +m.charAt(2));
+      System.out.println("---------toUpperCase->>>>>>>>>>" + m.toUpperCase());
+          System.out.println("---------toLowerCase->>>>>>>>>>" + m.toLowerCase());
 
-        //  System.out.println("----------SubString->>>>>>>>>>" + m.substring(0,2));
+      System.out.println("----------SubString->>>>>>>>>>" + m.substring(0,2));
 
-        //  System.out.println("----------concatTwoString->>>>>>>>>>" + m.concat("selvin"));
+          System.out.println("----------concatTwoString->>>>>>>>>>" + m.concat("selvin"));
 
-         System.out.println("----------concatTwoString->>>>>>>>>>" +m.check("Mahaan"));
+         System.out.println("----------contains->>>>>>>>>>" +m.check("Mahaan"));
+
+
+          System.out.println("----------IndexOf->>>>>>>>>>" +m.indexOf((char) 'M'));
+
+          
+          System.out.println("----Replace->>>>>>>>" +m.replace('M', 'e'));
+
+         
 
     }
 }
