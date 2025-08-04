@@ -1,4 +1,5 @@
 import java.util.*;
+import java.util.ArrayList;
 
 // a. to create a new array list, add some colours (string) and print out the collection.
 public class DAY10 {
@@ -1502,13 +1503,49 @@ class GetValue {
 // c. Show the new balance using primitive values (unboxed).
 
 
-class Account{
+class Account {
     int accountNumber;
     String holderName;
     double balance;
+    double interestRate; 
+
+    public Account(int accountNumber, String holderName, double balance, double interestRate) {
+        this.accountNumber = accountNumber;
+        this.holderName = holderName;
+        this.balance = balance;
+        this.interestRate = interestRate; 
+    }
+
+    public double calculateInterest() {
+        return (balance * interestRate) / 100;
+    }
 }
 
+class BankManagement {
+    public static void main(String[] args) {
+        ArrayList<Account> list = new ArrayList<>();
+        
+        Account account1 = new Account(1001, "Selvin", 50000.00, 4.5);
+        Account account2 = new Account(1002, "Steel", 40000.00, 5.6);
+        Account account3 = new Account(1003, "Hyfa", 100000.00, 8.0);
 
+        list.add(account1);
+        list.add(account2);
+        list.add(account3);
 
+        for (Account a : list) {
+            System.out.println("Account Number: " + a.accountNumber);
+            System.out.println("Account Holder Name: " + a.holderName);
+            System.out.println("Account Balance: " + a.balance);
+            System.out.println("Interest to Add: " + a.calculateInterest());
+            System.out.println("Balance After Adding Interest: " + (a.balance + a.calculateInterest()));
+            System.out.println("------------------------------------------------------------");
+        }
 
-
+        Integer n = 10; 
+        int n1 = n;     
+        System.out.println("After manual unboxing: " + n1);
+        Integer num = n1; 
+        System.out.println("After manual boxing: " + num);
+    }
+}
