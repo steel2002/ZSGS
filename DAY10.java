@@ -1,13 +1,4 @@
-<<<<<<< HEAD
-import java.util.ArrayList;
-import java.util.Collections;
-
-
-public class DAY10 {
-    public static void main(String[] args) {
-=======
 import java.util.*;
-
 
 // a. to create a new array list, add some colours (string) and print out the collection.
 public class DAY10 {
@@ -647,13 +638,12 @@ class FirstAndLast {
           System.out.println("Last Element :" +last);
 
          
->>>>>>> master
+
         
     }
     
 }
 
-<<<<<<< HEAD
 class MyArrayListDemo {
     public static void main(String[] args) {
         
@@ -664,7 +654,7 @@ class MyArrayListDemo {
 
     }
 }
-=======
+
 class CloneTreeset{
     public static void main(String[] args) {
          TreeSet<Integer> t = new TreeSet<>();
@@ -1291,7 +1281,234 @@ class Mapping1 {
 }
 // 10. get a reverse order view of the keys contained in a given map.
 
+class Revers1 {
+    public static void main(String[] args) {
+         TreeMap<Integer, String> t = new TreeMap<>();
+        t.put(1, "One");
+        t.put(2, "Two");
+        t.put(5, "Ten");
+        t.put(3, "Six");
+
+        Set<Integer> revSet = t.descendingKeySet();
+
+        System.out.println("Revers order : "+revSet);
+        
+    }
+}
+
+// 7. Write a Java program to,----------------------------------------------------------------------------------------------------
+
+// 1. associate the specified value with the specified key in a HashMap.
+class HashMapDemo {
+    public static void main(String[] args) {
+        
+        HashMap<Integer ,String> h = new HashMap<>();
+
+        h.put(1, "JAVA");
+        h.put(2, "CSS");
+        h.put(4, "HTML");
+        h.put(3, "JS");
+
+        System.out.println("HashMAp Add value :" +h);
+    }
+}
+
+// 2. count the number of key-value (size) mappings in a map.
+class CountH {
+    public static void main(String[] args) {
+        
+        HashMap<Integer ,String> h = new HashMap<>();
+
+        h.put(1, "JAVA");
+        h.put(2, "CSS");
+        h.put(4, "HTML");
+        h.put(3, "JS");
+
+        System.out.println("Count Of HashMap :" +h.size());
+        
+    }
+}
+// 3. copy all of the mappings from the specified map to another map.
+
+class CopyH {
+    public static void main(String[] args) {
+           HashMap<Integer ,String> h = new HashMap<>();
+
+        h.put(1, "JAVA");
+        h.put(2, "CSS");
+        h.put(4, "HTML");
+        h.put(3, "JS");
+
+        HashMap<Integer ,String> h1 = (HashMap<Integer, String>) h.clone();
+
+       System.out.println("Copy All Element in " + h1);
+
+       HashMap<Integer,String> h2 = new HashMap<>();
+       h2.putAll(h);
+       System.out.println("Copy Element in " +h2);
+
+
+        
+    }
+}
+// 4. remove all of the mappings from a map.
+ class RemoveH {
+    public static void main(String[] args) {
+
+          HashMap<Integer ,String> h = new HashMap<>();
+
+        h.put(1, "JAVA");
+        h.put(2, "CSS");
+        h.put(4, "HTML");
+        h.put(3, "JS");
+
+        System.out.println("Remove All Element Before  :" +h);
+        h.clear();
+        System.out.println("Remove All Element After :" +h);
+
+        
+    }
+ }
+// 5. check whether a map contains key-value mappings (empty) or not.
+
+class IsComper {
+    public static void main(String[] args) {
+
+           HashMap<Integer ,String> h = new HashMap<>();
+
+        h.put(1, "JAVA");
+         h.put(2, "CSS");
+        h.put(4, "HTML");
+        h.put(3, "JS");
+
+        System.out.println("Is map empty after " +h.isEmpty());
+        
+    }
+}
+// 6. get a shallow copy of a HashMap instance.
+
+class Copied {
+    public static void main(String[] args) {
+         HashMap<Integer ,String> h = new HashMap<>();
+
+        h.put(1, "JAVA");
+         h.put(2, "CSS");
+        h.put(4, "HTML");
+        h.put(3, "JS");
+
+        HashMap<Integer,String> h1 = (HashMap<Integer, String>) h.clone();
+
+        System.out.println("Copied Element Value :" +h1);
+        
+    }
+}
+
+// 7. test if a map contains a mapping for the specified key.
+
+class TestMap {
+    public static void main(String[] args) {
+        HashMap<Integer ,String> h = new HashMap<>();
+
+        h.put(1, "JAVA");
+         h.put(2, "CSS");
+        h.put(4, "HTML");
+        h.put(3, "JS");
+
+      Integer key =1;
+
+      if (h.containsKey(key)) {
+
+        System.out.println("Value is Found in HashMap :"+key);
+        
+      } else {
+        System.out.println("Value Not Found in HashMap " +key);
+      }
+        
+    }
+}
+// 8. test if a map contains a mapping for the specified value.
+
+class ValueCheck {
+    public static void main(String[] args) {
+         HashMap<Integer ,String> h = new HashMap<>();
+
+        h.put(1, "JAVA");
+         h.put(2, "CSS");
+        h.put(4, "HTML");
+        h.put(3, "JS");
+
+        String s = "CSSz";
+
+        if (h.containsValue(s)) {
+
+            System.out.println("Value is Found in HashMap " +s);
+            
+        } else {
+            System.out.println("Value is NOt found in HashMap " +s);
+        }
+
+        
+    }
+}
+
+
+// 9. create a set view of the mappings contained in a map.
+
+class viewH {
+    public static void main(String[] args) {
+        HashMap<Integer ,String> h = new HashMap<>();
+
+        h.put(1, "JAVA");
+         h.put(2, "CSS");
+        h.put(4, "HTML");
+        h.put(3, "JS");
+
+        Set<Map.Entry<Integer,String>> set = h.entrySet();
+        System.out.println("Set View Mappings in HashMap :"+set);
+            
+        }
+        
+    }
+
+// 10. get the value of a specified key in a map.
+
+class GetValue {
+    public static void main(String[] args) {
+          HashMap<Integer ,String> h = new HashMap<>();
+
+        h.put(1, "JAVA");
+         h.put(2, "CSS");
+        h.put(4, "HTML");
+        h.put(3, "JS");
+
+       System.out.println("Get The Value in HashMap " +h.get(2));
+        
+    }
+}
+
+
+// 8. Develop a Java program to manage a list of bank accounts using ArrayList.
+// --->Create an Account class with the following attributes:
+// a. accountNumber (int)
+// b. holderName (String)
+// c. balance (double)
+// --->Use autoboxing to store the balance and interest as Double wrapper objects.
+// --->Use manual boxing to convert a primitive interest rate into a Double object.
+// --->Unbox the values (both automatic and manual) to calculate and update the new balance.
+// --->Add at least three Account objects to an ArrayList<Account>.
+// --->For each account:
+// a. Display the holder name, account number, original balance
+// b. Apply 5% interest
+// c. Show the new balance using primitive values (unboxed).
+
+
+class Account{
+    int accountNumber;
+    String holderName;
+    double balance;
+}
 
 
 
->>>>>>> master
+
+
