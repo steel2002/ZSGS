@@ -1,3 +1,4 @@
+import java.lang.reflect.Method;
 import java.util.InputMismatchException;
 import java.util.Scanner;
 
@@ -150,12 +151,112 @@ class Ensure{
 // --->It must not start with 0.
 // Display an appropriate message whether the PIN is valid or invalid.
   
+class ATMPin {
+    public static void main(String[] args) {
+        Scanner scan = new Scanner(System.in);
+
+        try {
+
+            System.out.println("Enter a 4 digits ATM pin :");
+            String pin = scan.nextLine();
+
+            if(isValidPin(pin)){
+                System.out.println("Pin is Valid :");
+            } else {
+                System.out.println("Invalid Pin plz Make sure it :");
+                System.out.println("Is exactly 4 digits long :");
+                System.out.println("Contains digits only :");
+                System.out.println("not start with 0 :");
+            }
+            
+        } catch (Exception e) {
+            System.err.println(e.getMessage());
+        } finally {
+            scan.close();
+            System.out.println("Scanner class close :");
+        }
+    }
+    public static boolean isValidPin (String pin){
+
+        if(pin.length() !=4){
+            return false;
+        }                                                                  
+        if(!pin.matches("\\d{4}")){
+            return false;
+        }
+        if(pin.charAt(0)=='0'){
+            return false;
+        }
+        return true;
+    }
+}
+
+// 7. Write a Java program that shows exception propagation across multiple methods (method1 calls method2 calls method3, 
+ // which throws the exception). Handle the exception in method1.
+ 
+class Multiple {
+
+    public static void Method1() {
+        try {
+            Method2(); 
+        } catch (ArithmeticException e) {
+            System.out.println("ArithmeticException: " + e.getMessage());
+        }
+    }
+
+    public static void Method2() {
+        Method3();
+    }
+
+    public static void Method3() {
+        int div = 50 / 0; 
+    }
+
+    public static void main(String[] args) {
+        Method1();
+    }
+}
 
 
-// 7. Write a Java program that shows exception propagation across multiple methods (method1 calls method2 calls method3, which throws the exception). Handle the exception in method1.
-// ‌
-// 8. Design a login system that throws AuthenticationException if the username or password is incorrect. Handle it and display a login failure message.
-// ‌
+ 
+ 
+// 8. Design a login system that throws AuthenticationException if the username or password is incorrect.
+//  Handle it and display a login failure message.
+  
+
+class IncorrectHandle {
+    public static void main(String[] args) {
+        Scanner scan = new Scanner(System.in);
+        String userName = "Selvin";
+        String Password = "2002@selvin";
+
+        try {
+            System.out.print("Enter the Username: ");
+            String username = scan.nextLine();
+
+            if (!userName.equals(username)) {
+                throw new Exception("Username is Wrong"); 
+            }
+
+            System.out.print("Enter the Password: ");
+            String password = scan.nextLine();
+
+            if (!Password.equals(password)) {
+                throw new Exception("Password is Wrong");  
+            }
+
+            System.out.println("Login Successful!");  
+        } catch (Exception e) {
+            System.out.println("Exception Error: " + e.getMessage());
+        } finally {
+            scan.close();
+            System.out.println("Scanner class closed.");  
+        }
+
+        System.out.println("Code executed successfully."); 
+    }
+}
+
 // 9. Create a method to read a file from disk. Handle FileNotFoundException and IOException using try-catch-finally.
 // ‌
 // 10. Write a Java program to manage a voting system where a person must be at least 18 years old to be eligible to vote. Use a custom exception to handle the scenario when an ineligible person tries to register for voting. Display appropriate messages for eligible and ineligible voters.
