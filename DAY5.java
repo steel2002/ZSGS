@@ -155,6 +155,62 @@ class hospitalManagement{
 
         // at Main.main(DAY5.java:161)
 
+
+
+class ParentClass
+{
+	public ParentClass()
+	{
+		System.out.println("The Constructor of Super Class");
+	}
+
+	private void show()
+	{
+		System.out.println("The method is declare as private, so it cant be override");
+	}
+
+	static void display()
+	{
+		System.out.println("Static Method in the parent class will be executed, when object is created through Parent class reference");
+	}
+
+	void print()
+	{
+		System.out.println("This is to show that when we declare something final, it will not be able to override");
+	}
+}
+class ChildClass extends ParentClass
+{
+	void ParentClass()								              //compiler treats it as a method and expects a return type and
+	{										      //generates a compile time error
+		System.out.println("Trying to override the parent class constructor");            	
+	}										      
+	
+	void show()								              //Declaring same-named method in child = new method, not override.
+	{
+		System.out.println("The Void Show() inside child class, is not considered as override instead, it treated as new method");
+	}
+	
+	static void display()                                                                //If I didn't use static, it will generate error as a static method cannot be hide through
+	{                                                                                    //non-static method
+                                                                                             
+		System.out.println("Static Method in the child class will be executed, when object is created for child class");
+	}
+
+	void print()
+	{
+		System.out.println("This is will generate error, because ones we declare something final, it will be unchangeable and will be remains constant across all subclasses");
+	}
+
+	public static void main(String[]args)
+	{
+		ChildClass cd = new ChildClass();
+		cd.show();
+		cd.display();
+		cd.print();
+	}
+}
+
 // 3. Create a Java application to manage employees in a company. Define a base class Employee with a method calculateSalary(). 
 //Then create two subclasses FullTimeEmployee and PartTimeEmployee that override calculateSalary() method based on their working type.
 
