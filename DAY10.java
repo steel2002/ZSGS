@@ -1223,7 +1223,10 @@ class Delete {
 
 class Sorted {
     public static void main(String[] args) {
-            TreeMap<Integer, String> t = new TreeMap<>();
+    
+          Comparator<Integer> com = (a,b) ->b-a;
+
+            TreeMap<Integer, String> t = new TreeMap<>(com);
         t.put(1, "One");
         t.put(2, "Two");
         t.put(5, "ten");
@@ -1231,12 +1234,7 @@ class Sorted {
 
         System.out.println("Normal value :" +t);
 
-        TreeMap<Integer,String>  t1 = new TreeMap<>();
-
-        t1.putAll(t);
-
-        System.out.println("Sorted Value :" +t1);
-        
+       
     }
 }
 // 8. get a key-value mapping associated with the greatest key and the least key in a map.
