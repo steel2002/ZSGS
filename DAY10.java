@@ -1288,7 +1288,7 @@ class Revers1 {
         t.put(5, "Ten");
         t.put(3, "Six");
 
-        Set<Integer> revSet = t.descendingKeySet();
+        NavigableSet<Integer> revSet = t.descendingKeySet();
 
         System.out.println("Revers order : "+revSet);
         
