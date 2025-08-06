@@ -48,24 +48,55 @@ public class FileFolderDemo {
 
      // File Rename-----------------------------------------------------
 
-     File file = new File("D:\\FileDemo\\tst.tex");
+    //  File file = new File("D:\\FileDemo\\tst.tex");
      
-     file.createNewFile();
+    //  file.createNewFile();
 
-     File rename =new File("D:\\FileDemo\\ts.tex");
+    //  File rename =new File("D:\\FileDemo\\ts.tex");
 
-     boolean check =  file.renameTo(rename);
+    //  boolean check =  file.renameTo(rename);
 
-     System.out.println("Checking File :" + check);
+    //  System.out.println("Checking File :" + check);
 
       
-     System.out.println("Print File Name :" + rename.getName());   // File Name get Value :
-     System.out.println("Excecute File " + rename.canExecute());
-     System.out.println("Read File Check : "+ rename.canRead());
-     System.out.println("Write File Check :" +rename.canWrite());
+    //  System.out.println("Print File Name :" + rename.getName());   // File Name get Value :
+    //  System.out.println("Excecute File " + rename.canExecute());
+    //  System.out.println("Read File Check : "+ rename.canRead());
+    //  System.out.println("Write File Check :" +rename.canWrite());
+
+    
+    // FileList----------------------------------------------------------------------------------------------------
 
 
+    //  File file = new File("D:\\");
+      
+    //  String [] FileList = file.list();
+
+    //  for(String c : FileList){
+    //     System.out.println(c);
+    //  }
+
+    // Check File Only and Folder Only-------------------------------------------
+
+    
+//   File file = new File("D:\\");
+
+//   File [] fileread =file.listFiles();
+
+//   for (File file2 : fileread) {
+
+//     if (file2.isDirectory()) {
         
-    }
+//     System.out.println(file2);
+        
+//     }
+
+    
+//   }
+
+
+
+
+  }
     
 }
