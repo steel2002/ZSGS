@@ -1,3 +1,6 @@
+import java.io.FileNotFoundException;
+import java.io.FileReader;
+import java.io.IOException;
 import java.lang.reflect.Method;
 import java.util.InputMismatchException;
 import java.util.Scanner;
@@ -258,5 +261,25 @@ class IncorrectHandle {
 }
 
 // 9. Create a method to read a file from disk. Handle FileNotFoundException and IOException using try-catch-finally.
-// ‌
+
+class ReadFile {
+    public static void main(String[] args) {
+        
+        try {
+
+            FileReader file = new FileReader("D:\\FileDemo\\tst.tex");
+
+            int Reading =file.read();
+
+            System.out.println("File Reading sucessfull :");
+            
+        } catch (FileNotFoundException e) {
+
+            System.out.println("File Not Found :" + e.getMessage());
+         
+        } catch (IOException e){
+            System.out.println("IoException :" +e.getMessage());
+        }
+    }
+}
 // 10. Write a Java program to manage a voting system where a person must be at least 18 years old to be eligible to vote. Use a custom exception to handle the scenario when an ineligible person tries to register for voting. Display appropriate messages for eligible and ineligible voters.
