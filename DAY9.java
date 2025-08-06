@@ -282,4 +282,21 @@ class ReadFile {
         }
     }
 }
-// 10. Write a Java program to manage a voting system where a person must be at least 18 years old to be eligible to vote. Use a custom exception to handle the scenario when an ineligible person tries to register for voting. Display appropriate messages for eligible and ineligible voters.
+// 10. Write a Java program to manage a voting system where a person must be at least 18 years old to be eligible to vote.
+//  Use a custom exception to handle the scenario when an ineligible person tries to register for voting. Display appropriate messages
+//  for eligible and ineligible voters.
+
+class VotingSystem {
+    public static void main(String[] args) throws Exception {
+        
+        Scanner scan = new Scanner(System.in);
+        System.out.println("Enter The Your Age :");
+        int n = scan.nextInt();
+
+        if(n<18){
+            throw new Exception ("You are Not Eligible For Voting :");
+        } else {
+            System.out.println("You are Eligible For Voting Welcome PM Voting  :");
+        }
+    }
+}
