@@ -71,7 +71,7 @@ public static void main (String [] args){
 	int a=12;
 	int b=40;
 	
-	String result =(a< b) ? "B is Big " : "  not big";     // Time is also Big
+	String result =(a< b) ? "B is Big " : "  not big";    
 	        
 
 System.out.println(" " +result);
