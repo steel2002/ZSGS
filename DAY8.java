@@ -128,18 +128,20 @@ class Demo1
 	}
 }
 
+// 4. Get some strings through the command-line prompt and use an array to store and display them.
 
+class CommandLine{
+	public static void main(String[] args) {
+		
+		int n =Integer.parseInt(args[0]);
+		int b=Integer.parseInt(args[1]);
 
+		int sum= n+b;
 
-
-
-class Main{
-    public static void main(String[] args) {
-
-
-        
-    }
+		System.out.println("Sum of Element :" + sum);
+	}
 }
+
 
 
 
