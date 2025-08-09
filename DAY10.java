@@ -935,11 +935,11 @@ class IterateQ {
 
         q.add(10);
         q.add(20);
-        q.add(30);
+        q.add(50);
         q.add(40);
 
         for(Integer i : q){
-            System.out.println(" Iterate Element :"+i);
+            System.out.println(" Iterate Element :"+ q.poll());
         }
         
     }

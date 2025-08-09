@@ -9,6 +9,7 @@ import java.util.Collections;
 import java.util.ArrayList;
 import java.util.Comparator;
 import java.util.List;
+import java.util.GregorianCalendar;
 class Singleton {
 
     private static Singleton instance;
@@ -141,6 +142,84 @@ class CommandLine{
 		System.out.println("Sum of Element :" + sum);
 	}
 }
+
+// class GregorianCalender{
+// 	public static void main(String[] args) {
+
+// 		GregorianCalender g =new GregorianCalender();
+
+// 		GregorianCalender g1 = (GregorianCalender)g.clone();
+		
+// 		System.out.println(g.getClass());
+// 		System.out.println(g1.getClass());
+		
+// 	}
+// }
+
+//  5. Write a program to illustrate the usage of clone() and find out what kind of copy it will make.
+
+class  Address {
+	String City;
+
+	 Address (String  City){
+		this.City= City;
+	 }
+}
+
+class Person implements Cloneable {
+	String name;
+	 Address address;
+
+	 Person(String name, Address address){
+		this.name=name;
+		this.address=address;
+	 }
+    protected Object clone() throws CloneNotSupportedException {
+	return (Person) super.clone();
+}
+}
+
+class Main {
+	public static void main(String[] args) {
+		
+		try {
+
+			Address a = new Address("TVL");
+			Person p1 = new Person("Steel", a);
+			Person p2 = (Person) p1.clone();
+
+			System.out.println("Name :" +p1.name+ "City :"+p1.address.City+"......");
+
+
+			
+		} catch (Exception e) {
+
+			System.out.println("" +e.getMessage());
+		
+		}
+	}
+}
+
+// 6. Develop a Java program to illustrate pass-by-value.
+
+class CallByValue {
+
+	static void changeValue(int num){
+		System.out.println("Inside Value Pass :"+ num);
+		num=100;
+		System.out.println("Before Value :" + num);
+	}
+	public static void main(String[] args) {
+		int x =50;
+		changeValue(x);
+		System.out.println("After Value :" + x);
+
+		
+	}
+}
+// 7. Develop a Java program to illustrate the usage of toString() method.
+
+
 
 
 
