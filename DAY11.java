@@ -1,4 +1,6 @@
+import java.io.BufferedReader;
 import java.io.FileReader;
+import java.io.IOException;
 
 public class DAY11 {
     public static void main(String[] args) {
@@ -40,14 +42,62 @@ class FileRead {
 
 
 // 3. Write a Java program that reads a file and prints the number of lines, words, and characters.
+
+class Read{
+  public static void main(String[] args) throws IOException{
+    
+    String filePath="D:\\FileCheck\\DAY8.txt";
+
+    int linecount=0;
+    int wordcount=0;
+    int charcount=0;
+    
+    try {
+
+      BufferedReader reader = new BufferedReader(new FileReader(filePath));
+
+      String line;
+
+      while ((line=reader.readLine()) !=null) {
+
+        linecount++;
+
+        charcount += line.length();
+
+        String [] word =line.trim().split("\\s");
+
+
+        if(!line.trim().isEmpty()){
+          
+          wordcount +=word.length;
+        }
+        
+      }
+
+      reader.close();
+
+      System.out.println("Line Count "+ linecount);
+      System.out.println("Word Count " +wordcount);
+      System.out.println("Char Coutn "+charcount);
+
+      
+    } catch (IOException e) {
+
+      System.out.println(" " + e.getMessage());
+     
+    }
+  }
+}
 // 4. Write a Java program to append a text read from the user to an existing file without overwriting the original content.
+
+
 // 5. Design a Java application to manage a product inventory system using file handling and object serialization.
 // Create a class Product with the following attributes:
 // --->int productId
 // --->String name
 // --->double price
 // --->int quantity
-// a. Ensure the class implements the Serializable interface.
+// a. Ensure the class implements the Serializable interface. 
 // b. Methods:
 // --->Add a Product: Accept product details from the user and write the object to a file (products.dat).
 // --->View All Products: Read all product objects from the file and display them.
