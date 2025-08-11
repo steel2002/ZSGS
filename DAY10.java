@@ -437,7 +437,7 @@ class LinkListClone {
 // g. convert a hash set to an array.
 
 
-class Convert {
+class Convert1 {
     public static void main(String[] args) {
 
         HashSet<Integer> h = new HashSet<>();
