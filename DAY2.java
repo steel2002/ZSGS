@@ -214,6 +214,35 @@ class Pat2
    // 4. Write a program to do the following patterns using do...while loop?
 // a) Pascal Triangle
 
+class Pascal {
+
+	public static void main(String[] args) {
+		
+	Scanner scan = new Scanner(System.in);
+	System.out.println("Enter therow Value :");
+	int row = scan.nextInt();
+       
+	for(int i=1;i<=row;i++){
+		int space = row-i;
+		
+    for(int s=1;s<=space;s++){
+		System.out.print(" ");
+	
+	}
+		int p =1;
+
+		for(int j=1;j<=i;j++){
+			System.out.print(p+" ");
+
+			p=p *(i-j) /j;
+		}
+		System.out.println();
+	}
+	
+}
+}
+
+
 // b)   ZOHO
 //      CORP
 //      ORAT

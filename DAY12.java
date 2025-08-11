@@ -1,3 +1,5 @@
+import java.util.concurrent.SynchronousQueue;
+
 public class DAY12 {
     public static void main(String[] args) {
         
@@ -170,3 +172,58 @@ class NumberPrint {
         
     }
 }
+
+// 4. Create a Java program with a shared counter. Spawn 3 threads, where each thread increments the counter 1000 times.
+//  Use synchronization to avoid race conditions and display the final value.
+
+
+class SharedCounter {
+    private int count;
+
+    public synchronized void increment(){
+        count++;
+    }
+
+    public int getcount(){
+        return count;
+    }
+
+    public static void main(String[] args) {
+        
+        SharedCounter s = new  SharedCounter();
+
+        Runnable Task = () -> {
+            for(int i=0;i<100;i++){
+                s.increment();
+
+            }
+        };
+        Thread t1 = new Thread(Task);
+        Thread t2 = new Thread(Task);
+        Thread t3 = new Thread(Task);
+
+        t1.start();
+        t2.start();
+        t3.start();
+
+        try {
+
+            t1.join();
+            t2.join();
+            t3.join();
+            
+        } catch (InterruptedException e) {
+
+            System.out.println(" " +e.getMessage());
+           
+        }
+        System.out.println("Get Count Value : " + s.getcount());
+    }
+}
+
+// 5. Implement a basic producer-consumer problem using wait() and notify().
+// --->Producer thread should add items to a shared buffer.
+// --->Consumer thread should remove items.
+// Ensure the buffer size is limited to 5 items.. Use Threads to implement the ATM machine, where create thread to check the PIN number, 
+// another thread to perform the cash withdrawal, another one to check the balance amount and print the receipt.
+
