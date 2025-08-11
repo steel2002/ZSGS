@@ -227,3 +227,18 @@ class SharedCounter {
 // Ensure the buffer size is limited to 5 items.. Use Threads to implement the ATM machine, where create thread to check the PIN number, 
 // another thread to perform the cash withdrawal, another one to check the balance amount and print the receipt.
 
+
+class Pincheck{
+
+}
+
+class withdrawal {
+
+}
+
+class balance {
+
+}
+class Receipt {
+    
+}
