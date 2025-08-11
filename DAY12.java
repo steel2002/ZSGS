@@ -101,3 +101,72 @@ public static void main(String[] args) {
 
 // 3. Write a Java program where one thread prints only even numbers and another prints only odd numbers from 1 to 20. 
 // Synchronize the threads so that they print alternately (i.e., 1 2 3 4 ...)
+
+class NumberPrint {
+      private int number=1;
+      private int Max =20;
+
+      public synchronized void PrintOdd(){
+
+        while(number <= Max){
+
+            if(number %2 !=0){
+
+                System.out.println("Print Odd Number :" + number);
+                number++;
+                 notify();
+                
+             } else {
+
+                try {
+
+                wait();
+                
+
+                } catch (InterruptedException e){
+
+                    System.out.println(" " + e.getMessage());
+
+                }
+             }
+
+        }
+    }
+
+        public synchronized void PrintEven(){ 
+
+            while (number <= Max) {
+
+                if(number %2==0){
+                    System.out.println("Even Number : " +number);
+                    number++;
+                    notify();
+                
+
+                } else {
+                    try {
+                      wait();
+                        
+                    } catch(InterruptedException e){
+                        System.out.println("" + e.getMessage());
+
+                    }
+
+                }
+                
+            }
+        }
+
+    public static void main(String[] args) {
+
+        NumberPrint n = new NumberPrint();
+
+        Thread t1 = new Thread (()-> n.PrintOdd());
+        Thread t2 = new Thread (()-> n.PrintEven());
+
+        t1.start();
+       t2.start();
+
+        
+    }
+}
