@@ -227,18 +227,39 @@ class SharedCounter {
 // Ensure the buffer size is limited to 5 items.. Use Threads to implement the ATM machine, where create thread to check the PIN number, 
 // another thread to perform the cash withdrawal, another one to check the balance amount and print the receipt.
 
+class ATM{
+    private int balance =10000;
+    private final int correctPin =2002;
+  
+    public synchronized boolean checkPin(int enterPin){
 
-class Pincheck{
+        System.out.println("checking PIN :");
+        return enterPin == correctPin;
+    }
 
-}
+    public synchronized void withdrawal (int amount){
+        System.out.println("Processing Withdrawal :");
 
-class withdrawal {
+        if(amount <=balance){
+            balance-=amount;
+            System.out.println("Withdrawal successful :"+ amount);
+        } else {
+            System.out.println("No Balance :");
+        }
+    }
+   public synchronized int checkBalance(){
 
-}
+    System.out.println("Checking balance :");
+    return balance;
+   }
 
-class balance {
 
-}
-class Receipt {
-    
+   public synchronized void printReceipt(int amount){
+
+    System.out.println("Printing receipt :");
+    System.out.println("Amount Withdrow : "+ amount );
+    System.out.println("Remaining balance :" + balance);
+   }
+
+
 }

@@ -5,6 +5,16 @@ public class Collation  {
     public static void main(String[] args) {
         
     }
+
+    public static Object reversh() {
+        // TODO Auto-generated method stub
+        throw new UnsupportedOperationException("Unimplemented method 'reversh'");
+    }
+
+    public static void sort(List<Interger> odd, Object reversh) {
+        // TODO Auto-generated method stub
+        throw new UnsupportedOperationException("Unimplemented method 'sort'");
+    }
     
 }
 

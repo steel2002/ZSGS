@@ -269,9 +269,9 @@ class ReadFile {
 
             FileReader file = new FileReader("D:\\FileDemo\\tst.tex");
 
-            int Reading =file.read();
+              int Reading =file.read();
 
-            System.out.println("File Reading sucessfull :");
+            System.out.println("File Reading sucessfull :" );
             
         } catch (FileNotFoundException e) {
 

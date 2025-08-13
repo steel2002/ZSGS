@@ -20,14 +20,14 @@ public static void main (String [] args){
 			in1.inst=10;     // instance variable
 			in2.inst=20;
 			
-			  DAY1.age=9;                // static variable 
+			 DAY1.age=9;                // static variable 
 		
 	      final  int key =100;    // final variable
 	
-	System.out.println("Final of Variable" +key);
-	System.out.println("black of variable " +black);
-	System.out.println("Local of variable" +Local);
-	System.out.println("static of variable" +age);
+	System.out.println("Final of Variable " +key);
+	System.out.println("black of variable  " +black);
+	System.out.println("Local of variable  " +Local);
+	System.out.println("static of variable  " +age);
 	System.out.println("instance of variable " +in2.inst);
 	System.out.println("instance of variable " +in1.inst);
 	
