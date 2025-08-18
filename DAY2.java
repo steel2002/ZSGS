@@ -49,7 +49,7 @@ class xpattan
 			{
 				if( (i==j) || (i+j==row-1))
 				{
-					System.out.print(1+" ");
+					System.out.print("*"+" ");
 				}
 				else
       				{
@@ -57,6 +57,10 @@ class xpattan
 				}
 			}
 			System.out.println("");
+
+
+
+			 
 		}
 	}
 }

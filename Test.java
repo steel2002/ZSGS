@@ -7,7 +7,7 @@ import java.util.Scanner;
     public static void main(String[] args) {
       
       
-       int arr[]={30,2,4,15,12,10,5};
+       int arr[]={1,2,3,4,5,6,7,8,9};
         int n = arr.length;
         ArrayList<Integer> odd = new ArrayList<>();
         ArrayList<Integer> even = new ArrayList<>();
