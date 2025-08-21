@@ -7,6 +7,11 @@ public class File {
     public static void main(String[] args) {
         
     }
+
+    public void createNewFile() {
+        // TODO Auto-generated method stub
+        throw new UnsupportedOperationException("Unimplemented method 'createNewFile'");
+    }
     
 }
 

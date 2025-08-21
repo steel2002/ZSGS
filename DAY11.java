@@ -37,6 +37,118 @@ class FileRead {
 // from the file to another file c) to modify the content of a file d) to search for a particular word in a 
 // file and display how many times it appears e) read the content(List of Electronic Products) of a .txt file and copy them to the .csv file.
 
+class Ques2
+{
+	public static void main(String[]args)
+	{
+		
+	//a) to read content from the user and write it into another file
+		try
+		{	
+			String line;	
+			Scanner input = new Scanner(System.in);
+		
+			BufferedWriter bw = new BufferedWriter(new FileWriter("File.txt"));
+
+			System.out.println("Enter something: ");
+			line = input.nextLine();
+			bw.write(line);
+			bw.close();
+			System.out.println("\n\n");
+			
+			BufferedReader br = new BufferedReader(new FileReader("File.txt"));
+			while((line = br.readLine())!=null)
+			{
+				System.out.println(line);
+			}
+			br.close();
+			System.out.println("\n\n");
+
+	//b) from the file to another file 	
+		
+			File file = new File();
+			file.createNewFile();
+			bw = new BufferedWriter(new FileWriter("File1.txt"));
+			br = new BufferedReader(new FileReader("File.txt"));
+
+			while((line = br.readLine())!=null)
+			{
+				bw.write(line);
+			}
+			bw.close();
+			br.close();
+
+			br= new BufferedReader(new FileReader("File1.txt"));
+			while((line = br.readLine())!=null)
+			{
+				System.out.println(line);
+			}	
+			br.close();
+			System.out.println("\n\n");
+
+	//c) to modify the content of a file
+
+			bw = new BufferedWriter(new FileWriter("File1.txt"));
+			System.out.println("Enter something to modify the content: ");
+			line = input.nextLine();
+			bw.write(line);
+			bw.close();
+
+			br = new BufferedReader(new FileReader("File1.txt"));
+			while((line = br.readLine())!=null)
+			{
+				System.out.println(line);
+			}
+			br.close();
+			System.out.println("\n\n");
+
+	//d) to search for a particular word in a file and display how many times it appears 
+
+			String word = "java";
+			int count = 0;
+			br = new BufferedReader(new FileReader("File.txt"));
+			while((line = br.readLine())!=null)
+			{
+				String[]words = line.split("\\s+");
+				for(String str:words)
+				{
+					if(str.equalsIgnoreCase(word))
+					{
+						count++;
+					}
+				}
+			}
+			br.close();
+			System.out.println("The presence of the given word in the file is: "+count+" times...");
+			System.out.println("\n\n");
+
+	//e) read the content(List of Electronic Products) of a .txt file and copy them to the .csv file.
+			
+			file = new File();
+			bw = new BufferedWriter(new FileWriter("products.csv"));
+			br = new BufferedReader(new FileReader("elecproducts.txt"));
+			while((line = br.readLine())!=null)
+			{
+				String newLine = line.replaceAll("\\s+", ", ");
+				bw.write(newLine);
+			}
+			bw.close();
+			br.close();
+
+			br = new BufferedReader(new FileReader("products.csv"));
+			while((line = br.readLine())!=null)
+			{
+				System.out.println(line);
+			}
+			br.close();
+			input.close();
+		}
+		catch(IOException e)
+		{
+			System.out.println(e.getMessage());
+		}	
+	}
+}
 
 
 
@@ -96,6 +208,44 @@ class Read{
 
 //TIP To <b>Run</b> code, press <shortcut actionId="Run"/> or
 // click the <icon src="AllIcons.Actions.Execute"/> icon in the gutter.
+
+
+class Ques4
+{
+	public static void main(String[]args)
+	{
+		try
+		{
+			String line;
+			BufferedReader br = new BufferedReader(new FileReader("File1.txt"));
+			while((line = br.readLine())!=null)
+			{
+				System.out.println(line);
+			}
+			System.out.println("\n\n");
+
+			Scanner input = new Scanner(System.in);
+			BufferedWriter bw = new BufferedWriter(new FileWriter("File1.txt", true));
+			System.out.println("Enter something to append: ");
+			line = input.nextLine();
+			bw.write(line);
+			bw.close();
+			input.close();
+			System.out.println("\n\n");	
+
+			br = new BufferedReader(new FileReader("File1.txt"));
+			while((line = br.readLine())!=null)
+			{
+				System.out.println(line);
+			}
+			br.close();
+		}
+		catch(IOException e)
+		{
+			System.out.println(e.getMessage());
+		}
+	}
+}
 
 
 
