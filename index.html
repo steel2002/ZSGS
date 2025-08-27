@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    
+    <title>Mark Sheet</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #fdf0f5; /* light pink background */
+            padding: 20px;
+        }
+
+        .marksheet {
+            max-width: 600px;
+            margin: auto;
+            border: 2px solid #333;
+            padding: 20px;
+            background-color: #fff;
+            box-shadow: 0px 0px 10px rgba(0,0,0,0.2);
+        }
+
+        h1, h2 {
+            text-align: center;
+            color: #d6336c; /* baby pink/dark pink */
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 20px;
+        }
+
+        table, th, td {
+            border: 1px solid #333;
+        }
+
+        th, td {
+            padding: 10px;
+            text-align: center;
+        }
+
+        th {
+            background-color: #ffe6f0; /* light pink */
+        }
+
+        .total {
+            font-weight: bold;
+            background-color: #f7c6d0;
+        }
+
+        .grade {
+            font-size: 1.2em;
+            font-weight: bold;
+            color: #d6336c;
+            text-align: center;
+            margin-top: 10px;
+        }
+    </style>
+</head>
+<body>
+
+<div class="marksheet">
+    <h1>ABC School</h1>
+    <h2>Mark Sheet</h2>
+
+    <p><strong>Student Name:</strong> John Doe</p>
+    <p><strong>Roll Number:</strong> 23</p>
+    <p><strong>Class:</strong> 10th</p>
+
+    <table>
+        <tr>
+            <th>Subject</th>
+            <th>Marks Obtained</th>
+            <th>Maximum Marks</th>
+        </tr>
+        <tr>
+            <td>Math</td>
+            <td>88</td>
+            <td>100</td>
+        </tr>
+        <tr>
+            <td>Science</td>
+            <td>92</td>
+            <td>100</td>
+        </tr>
+        <tr>
+            <td>English</td>
+            <td>85</td>
+            <td>100</td>
+        </tr>
+        <tr>
+            <td>History</td>
+            <td>90</td>
+            <td>100</td>
+        </tr>
+        <tr class="total">
+            <td>Total</td>
+            <td>355</td>
+            <td>400</td>
+        </tr>
+        <tr class="total">
+            <td>Percentage</td>
+            <td colspan="2">88.75%</td>
+        </tr>
+    </table>
+
+    <p class="grade">Grade: A+</p>
+</div>
+
+</body>
+</html>

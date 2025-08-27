@@ -317,6 +317,8 @@ class GetFirstAndLast {
 // a. append the specified element to the end of a hash set.
 
 class AddElement {
+
+    
     public static void main(String[] args) {
        LinkedHashSet<Integer> h = new LinkedHashSet<>();
 
