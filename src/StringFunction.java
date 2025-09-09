@@ -463,3 +463,49 @@ class DemoReplaceChar {
         System.out.println("Replace 'x' -> 'y': " + result3);
     }
 }
+
+// 🔹 Method 26: replace(CharSequence target, CharSequence replacement)
+
+
+class DemoReplaceSubstring {
+    public static void main(String[] args) {
+        String str = "I like Java. Java is powerful.";
+
+        // Replace all "Java" with "Python"
+        String result1 = str.replace("Java", "Python");
+
+        // Replace "powerful" with "awesome"
+        String result2 = str.replace("powerful", "awesome");
+
+        // Replace substring not found
+        String result3 = str.replace("C++", "Go");
+
+        System.out.println("Original: " + str);
+        System.out.println("Replace 'Java' -> 'Python': " + result1);
+        System.out.println("Replace 'powerful' -> 'awesome': " + result2);
+        System.out.println("Replace 'C++' -> 'Go': " + result3);
+    }
+}
+
+// 🔹 Method 27: replaceFirst(String regex, String replacement)
+
+
+class DemoReplaceFirst {
+    public static void main(String[] args) {
+        String str = "Java is fun. Java is powerful. Java is everywhere.";
+
+        // Replace first "Java" with "Python"
+        String result1 = str.replaceFirst("Java", "Python");
+
+        // Replace first word (regex: \w+)
+        String result2 = str.replaceFirst("\\w+", "Replaced");
+
+        // Replace first occurrence of "is"
+        String result3 = str.replaceFirst("is", "was");
+
+        System.out.println("Original: " + str);
+        System.out.println("Replace first 'Java' -> 'Python': " + result1);
+        System.out.println("Replace first word -> 'Replaced': " + result2);
+        System.out.println("Replace first 'is' -> 'was': " + result3);
+    }
+}
