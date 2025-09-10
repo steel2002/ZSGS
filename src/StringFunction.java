@@ -509,3 +509,126 @@ class DemoReplaceFirst {
         System.out.println("Replace first 'is' -> 'was': " + result3);
     }
 }
+
+// 🔹 Method 28: replaceAll(String regex, String replacement)
+
+
+class DemoReplaceAll {
+    public static void main(String[] args) {
+        String str = "Java is fun. Java is powerful. Java is everywhere.";
+
+        // Replace all "Java" with "Python"
+        String result1 = str.replaceAll("Java", "Python");
+
+        // Replace all words with "X" (regex: \w+)
+        String result2 = str.replaceAll("\\w+", "X");
+
+        // Replace all spaces with "_"
+        String result3 = str.replaceAll("\\s", "_");
+
+        System.out.println("Original: " + str);
+        System.out.println("Replace all 'Java' -> 'Python': " + result1);
+        System.out.println("Replace all words -> 'X': " + result2);
+        System.out.println("Replace all spaces -> '_': " + result3);
+    }
+}
+
+
+// 🔹 Method 29: matches(String regex)
+
+class DemoMatches {
+    public static void main(String[] args) {
+        String str1 = "Java123";
+        String str2 = "12345";
+        String str3 = "hello";
+
+        // Check if str1 contains only letters and digits
+        System.out.println(str1.matches("[A-Za-z0-9]+")); // true
+
+        // Check if str2 contains only digits
+        System.out.println(str2.matches("\\d+")); // true
+
+        // Check if str3 contains only uppercase letters
+        System.out.println(str3.matches("[A-Z]+")); // false
+
+        // Check if str3 contains only lowercase letters
+        System.out.println(str3.matches("[a-z]+")); // true
+    }
+}
+
+
+// 🔹 Method 30: split(String regex)
+
+class DemoSplit {
+    public static void main(String[] args) {
+        String str1 = "Java,Python,C++,JavaScript";
+
+        // Split by comma
+        String[] arr1 = str1.split(",");
+
+        System.out.println("Splitting by comma:");
+        for(String lang : arr1) {
+            System.out.println(lang);
+        }
+
+        String str2 = "one two   three four";
+
+        // Split by one or more spaces
+        String[] arr2 = str2.split("\\s+");
+
+        System.out.println("\nSplitting by spaces:");
+        for(String word : arr2) {
+            System.out.println(word);
+        }
+    }
+}
+
+
+// 🔹 Method 31: split(String regex, int limit)
+
+class DemoSplitLimit {
+    public static void main(String[] args) {
+        String str = "Java,Python,C++,JavaScript";
+
+        // Split into maximum 2 parts
+        String[] arr1 = str.split(",", 2);
+        System.out.println("Split with limit=2:");
+        for(String s : arr1) {
+            System.out.println(s);
+        }
+
+        // Split into maximum 3 parts
+        String[] arr2 = str.split(",", 3);
+        System.out.println("\nSplit with limit=3:");
+        for(String s : arr2) {
+            System.out.println(s);
+        }
+
+        // Split with limit = -1 (no limit, include all)
+        String[] arr3 = str.split(",", -1);
+        System.out.println("\nSplit with limit=-1:");
+        for(String s : arr3) {
+            System.out.println(s);
+        }
+    }
+}
+
+// 🔹 Method 32: join(CharSequence delimiter, CharSequence... elements)
+
+class DemoJoin {
+    public static void main(String[] args) {
+        // Join programming languages with comma
+        String result1 = String.join(", ", "Java", "Python", "C++", "JavaScript");
+        System.out.println("Joined with comma: " + result1);
+
+        // Join words with space
+        String result2 = String.join(" ", "Hello", "World", "Java");
+        System.out.println("Joined with space: " + result2);
+
+        // Join using hyphen
+        String result3 = String.join("-", "2025", "09", "06");
+        System.out.println("Joined with hyphen: " + result3);
+    }
+}
+
+
