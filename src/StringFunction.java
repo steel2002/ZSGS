@@ -1,3 +1,5 @@
+import java.util.Arrays;
+
 public class StringFunction {
     public static void main(String[] args) {
         
@@ -553,6 +555,11 @@ class DemoMatches {
 
         // Check if str3 contains only lowercase letters
         System.out.println(str3.matches("[a-z]+")); // true
+
+         // Check if email is valid
+        String email = "test@example.com";
+        boolean isValidEmail = email.matches("^[A-Za-z0-9+_.-]+@[A-Za-z0-9.-]+$");
+        System.out.println("Valid email? " + isValidEmail);
     }
 }
 
@@ -630,5 +637,161 @@ class DemoJoin {
         System.out.println("Joined with hyphen: " + result3);
     }
 }
+
+// 🔹 Method 33: format(String format, Object... args)
+
+class DemoFormat {
+    public static void main(String[] args) {
+        String name = "Darling";
+        int age = 20;
+        double score = 95.5678;
+        // char c ='c'; char not Pointer
+
+        // Format with string and integer
+        String result1 = String.format("My name is %s and I am %d years old.", name, age);
+        System.out.println(result1);
+
+        // Format with decimal (2 places)
+        String result2 = String.format("My score is %.2f", score);
+        System.out.println(result2);
+
+        // Format with multiple placeholders
+        String result3 = String.format("Name: %s | Age: %d | Score: %.1f", name, age, score);
+        System.out.println(result3);
+    }
+}
+
+// 🔹 Method 34: valueOf()
+
+class DemoValueOf {
+    public static void main(String[] args) {
+        int num = 100;
+        double pi = 3.14159;
+        boolean flag = true;
+        char letter = 'A';
+
+        // Convert different types to String
+        String str1 = String.valueOf(num);
+        String str2 = String.valueOf(pi);
+        String str3 = String.valueOf(flag);
+        String str4 = String.valueOf(letter);
+
+        // Print results
+        System.out.println("Integer to String: " + str1);
+        System.out.println("Double to String: " + str2);
+        System.out.println("Boolean to String: " + str3);
+        System.out.println("Char to String: " + str4);
+
+        // Example with object
+        Object obj = new Object();
+        String str5 = String.valueOf(obj);
+        System.out.println("Object to String: " + str5);
+    }
+}
+
+// 🔹 Method 35: intern()
+
+class DemoIntern {
+    public static void main(String[] args) {
+        String str1 = new String("Hello"); // created in heap memory
+        String str2 = "Hello";            // created in string pool
+
+        // Before intern()
+        System.out.println("Before intern:");
+        System.out.println(str1 == str2); // false (different references)
+
+        // After intern()
+        str1 = str1.intern();
+        System.out.println("\nAfter intern:");
+        System.out.println(str1 == str2); // true (same pool reference)
+    }
+}
+
+
+// 🔹 Method 36: getBytes()
+
+class DemoGetBytes {
+    public static void main(String[] args) {
+        String str = "Hello";
+
+        // Convert string to byte array
+        byte[] byteArray = str.getBytes();
+
+        // Print byte array
+        System.out.println("String: " + str);
+        System.out.println("Byte array: " + Arrays.toString(byteArray));
+
+        // Convert back to string
+        String newStr = new String(byteArray);
+        System.out.println("Back to String: " + newStr);
+    }
+}
+
+
+// 🔹 Method 37: toCharArray()
+
+
+class DemoToCharArray {
+    public static void main(String[] args) {
+        String str = "Java";
+
+        // Convert string to char array
+        char[] charArray = str.toCharArray();
+
+        // Print characters one by one
+        System.out.println("Characters in the string:");
+        for (char c : charArray) {
+            System.out.println(c);
+        }
+
+        // Length of char array
+        System.out.println("Array length: " + charArray.length);
+    }
+}
+
+// 🔹 Method 38: getChars(int srcBegin, int srcEnd, char[] dst, int dstBegin)
+
+
+class DemoGetChars {
+    public static void main(String[] args) {
+        String str = "Java Programming";
+        char[] dst = new char[20];
+
+        // Copy "Java" into dst[0..4]
+        str.getChars(0, 4, dst, 0);
+
+        // Copy "Programming" into dst[5..15]
+        str.getChars(5, str.length(), dst, 5);
+
+        System.out.println("Destination char array: ");
+        for (char c : dst) {
+            if (c != '\u0000') { // ignore empty char values
+                System.out.print(c);
+            }
+        }
+    }
+}
+
+
+// 🔹 Method 39: regionMatches()
+
+class DemoRegionMatches {
+    public static void main(String[] args) {
+        String str1 = "HelloWorld";
+        String str2 = "World";
+
+        // Compare "World" part
+        boolean match1 = str1.regionMatches(5, str2, 0, 5);
+        System.out.println("Match1 (case-sensitive): " + match1);
+
+        // Case insensitive compare
+        String str3 = "helloworld";
+        boolean match2 = str1.regionMatches(true, 0, str3, 0, 5);
+        System.out.println("Match2 (case-insensitive): " + match2);
+    }
+}
+
+
+
 
 
